@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hyprtxt</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Bennett - March 14th, 2021"
+    />
+    <link rel="canonical" href="https://bennett.today" />
+    <style>
+      body {
+        margin: 0;
+        background: #0fc;
+      }
+      .page1 {
+        position: relative;
+        top: 0;
+      }
+      .page1 p {
+        color: white;
+        text-align: center;
+        /* margin: 30px auto; */
+      }
+      .page2 {
+        position: absolute;
+        top: 100vh;
+        height: calc( 100vh - 60px );
+        width: 100%;
+        background: white;
+        padding: 30px;
+        color: #c5c4c5;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page1">
+      <p>Bennett</p>
+      <p>March 14th, 2021</p>
+    </div>
+    <div class="page2">
+      We love you Bennett!
+      <ul>
+        <li>Bennett is <span id="year"></span> years old!</li>
+        <li>Bennett is <span id="week"></span> weeks old!</li>
+        <li>Bennett is <span id="day"></span> days old!</li>
+      </ul>
+    </div>
+    <script>
+        const sep = new Date('03-16-2021')
+        const today = new Date()
+        const offset = today - sep
+        const diffDay = Math.floor(offset / (1000 * 60 * 60 * 24))
+        const diffWeek = Math.floor(offset / (1000 * 60 * 60 * 24 * 7))
+        const diffYear = Math.floor(offset / (1000 * 60 * 60 * 24 * 365.25))
+        const elementDay = document.getElementById('day')
+        const elementWeek = document.getElementById('week')
+        const elementYear = document.getElementById('year')
+        elementDay.innerHTML = diffDay;
+        elementWeek.innerHTML = diffWeek;
+        elementYear.innerHTML = diffYear;
+    </script>
+  </body>
+</html>
